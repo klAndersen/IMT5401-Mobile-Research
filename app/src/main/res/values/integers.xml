@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Options for when the tracking should be active -->
+    <integer name="option_never_run_tracking">0</integer>
+    <integer name="option_always_run_tracking">1</integer>
+    <integer name="option_run_timed_tracking">2</integer>
+    
+</resources>

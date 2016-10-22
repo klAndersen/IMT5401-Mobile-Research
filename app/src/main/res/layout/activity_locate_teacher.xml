@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="guc.imt5401.trackmyteacher.LocateTeacherActivity">
+
+    <TextView
+        android:id="@+id/tvSearchForTeacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/inputSearch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/tvSearchForTeacher" />
+
+    <EditText
+        android:id="@+id/inputSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@id/tvSearchForTeacher"
+        android:hint="@string/search_hint_teacher"
+        android:singleLine="true" />
+
+    <CheckedTextView
+        android:id="@+id/chktvChooseAll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/inputSearch"
+        android:checkMark="?android:textCheckMark"
+        android:checked="false"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="checkAllListedTeachers"
+        android:orientation="horizontal"
+        android:text="@string/chktvChooseAll" />
+
+    <ListView
+        android:id="@+id/lvEntries"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/btnTrackSelected"
+        android:layout_below="@id/chktvChooseAll"
+        android:choiceMode="multipleChoice" />
+
+    <Button
+        android:id="@+id/btnTrackSelected"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnRemoveSelected"
+        android:onClick="trackSelectedTeachers"
+        android:text="@string/btnTrackSelected" />
+
+    <Button
+        android:id="@+id/btnRemoveSelected"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="unCheckSelectedTeachers"
+        android:text="@string/btnRemoveSelected" />
+</RelativeLayout>

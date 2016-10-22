@@ -1,0 +1,157 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="guc.imt5401.trackmyteacher.RegisterAccessPointsActivity">
+
+    <!--
+
+    textview listing showing the recorded signal data
+    =====================================
+
+     Textview / spinner => select building
+     Textview / spinner => select floor
+     Textview / spinner => select room
+                        => updated on building/floor selection
+    Button => Register/Record signal
+    Button => Stop recording signal
+
+    -->
+
+    <!-- Wi-Fi signal data overview -->
+
+        <TextView
+            android:id="@+id/tvWiFiOverview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="@string/tvWiFiOverview" />
+
+        <TextView
+            android:id="@+id/tvWiFiName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tvWiFiName" />
+
+        <TextView
+            android:id="@+id/tvWiFiSignal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tvWiFiSignal" />
+
+        <TextView
+            android:id="@+id/tvWiFiAddress"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tvWiFiAddress" />
+
+        <TextView
+            android:id="@+id/tvWiFiSSID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tvWiFiSSID" />
+
+        <TextView
+            android:id="@+id/tvWiFiBSID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tvWiFiBSID" />
+
+    <!-- Space -->
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="15.0dip" />
+
+    <!-- Layout for selecting building, floor and room to record -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tvRoomSelection"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="@string/tvRoomSelection" />
+
+        <!-- Textview / spinner: select building -->
+        <TextView
+            android:id="@+id/tvSelectBuilding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRoomSelection"
+            android:text="@string/tvSelectBuilding" />
+
+        <Spinner
+            android:id="@+id/spinnerBuilding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRoomSelection"
+            android:layout_toEndOf="@id/tvSelectBuilding"
+            android:layout_toRightOf="@id/tvSelectBuilding"
+            android:prompt="@string/default_spinner" />
+
+        <!-- Textview / spinner: select floor -->
+
+        <TextView
+            android:id="@+id/tvSelectFloor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvSelectBuilding"
+            android:text="@string/tvSelectFloor" />
+
+        <Spinner
+            android:id="@+id/spinnerFloor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tvSelectFloor"
+            android:layout_toRightOf="@id/tvSelectFloor"
+            android:layout_below="@id/spinnerBuilding"
+            android:prompt="@string/default_spinner" />
+
+        <!-- Textview / spinner: select room -->
+
+        <TextView
+            android:id="@+id/tvSelectRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvSelectFloor"
+            android:text="@string/tvSelectRoom" />
+
+        <Spinner
+            android:id="@+id/spinnerRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tvSelectRoom"
+            android:layout_toRightOf="@id/tvSelectRoom"
+            android:layout_below="@id/spinnerFloor"
+            android:prompt="@string/default_spinner" />
+
+        <!-- Buttons for starting/stopping the recording of the Wi-Fi signals -->
+
+        <Button
+            android:id="@+id/btnStartRecordingWiFiSignal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnStopRecordingWiFiSignal"
+            android:onClick="startRecordingWiFiSignal"
+            android:text="@string/btnStartRecordingWiFiSignal" />
+
+        <Button
+            android:id="@+id/btnStopRecordingWiFiSignal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="stopRecordingWiFiSignal"
+            android:text="@string/btnStopRecordingWiFiSignal" />
+    </RelativeLayout>
+</LinearLayout>

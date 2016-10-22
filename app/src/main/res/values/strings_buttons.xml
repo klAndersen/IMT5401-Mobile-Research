@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ShowApplicationLogActivity -->
+
+    <!-- Button: Delete content from log -->
+    <string name="btnDeleteLog">Delete log</string>
+
+    <!-- RegisterAccessPointsActivity -->
+
+    <!-- Button: Delete content from log -->
+    <string name="btnStartRecordingWiFiSignal">Record Wi-Fi signal</string>
+    <string name="btnStopRecordingWiFiSignal">Stop recording Wi-Fi signal</string>
+
+    <!-- SettingsActivity: RadioButtons -->
+
+    <!-- RadioButton: Option - Never run -->
+    <string name="rbRunNever">Never track</string>
+    <!-- RadioButton: Option - Run all the time -->
+    <string name="rbRunAlways">Track all the time</string>
+    <!-- RadioButton: Option - Run between timed intervals -->
+    <string name="rbRunTimedInterval">Track only between</string>
+
+    <!-- StartUpActivity: Options -->
+
+    <!-- Button: Accept tracking request -->
+    <string name="btnAcceptTrackingRequest">Accept tracking request(s)</string>
+    <!-- Button: Deny tracking request -->
+    <string name="btnDenyTrackingRequest">Deny tracking request(s)</string>
+    <!-- Button: Register access points -->
+    <string name="btnRegisterAccessPoints">Register Wi-Fi access points</string>
+    <!-- Button: Locate teacher -->
+    <string name="btnLocateTeacher">Locate teacher</string>
+
+    <!-- LocateTeacherActivity -->
+
+    <!-- Button: Track selected teacher(s)  -->
+    <string name="btnTrackSelected">Send tracking request to teacher(s)</string>
+    <!-- Button: Remove selected teachers from tracking list -->
+    <string name="btnRemoveSelected">Remove selected teacher(s)</string>
+</resources>

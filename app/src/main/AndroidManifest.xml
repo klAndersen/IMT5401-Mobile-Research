@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="guc.imt5401.trackmyteacher" >
+
+    <!-- Application permissions -->
+
+
+    <!-- Check if network is up and available -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Require internet access to receive notifications and sending position -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Location access -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- GCM requires a Google account -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- Wake device when receiving notifications -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Check if device is done booting -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!--
+    Self-defined permission declared so that the application can receive GCM messages.
+    Requires the package name of the application!
+    Example: PACKAGE.permission.C2D_MESSAGE.
+    -->
+    <permission
+        android:name="guc.imt5401.trackmyteacher.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="guc.imt5401.trackmyteacher.permission.C2D_MESSAGE" />
+    <!-- Application can receive messages from GCM -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- StartUp activity -->
+        <activity
+            android:name=".StartUpActivity"
+            android:label="@string/app_name"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Sub-activity that displays the settings -->
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/activity_settings"
+            android:parentActivityName=".StartUpActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StartUpActivity" />
+        </activity>
+
+        <!-- Sub-activity that displays the application log -->
+        <activity
+            android:name=".ShowApplicationLogActivity"
+            android:label="@string/activity_display_log"
+            android:parentActivityName=".StartUpActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StartUpActivity" />
+        </activity>
+
+        <!-- Sub-activity for storing access points -->
+        <activity
+            android:name=".RegisterAccessPointsActivity"
+            android:label="@string/activity_register_access_points"
+            android:parentActivityName=".StartUpActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StartUpActivity" />
+        </activity>
+
+        <!-- Sub-activity for locating teacher(s)-->
+        <activity
+            android:name=".LocateTeacherActivity"
+            android:label="@string/activity_locate_teacher"
+            android:parentActivityName=".StartUpActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StartUpActivity" />
+        </activity>
+
+        <!-- placeholder for potential service -->
+        <service
+            android:name=".AutomaticService"
+            android:exported="false" >
+        </service>
+
+        <!-- BroadcastReceiver for application events and - messages -->
+        <receiver
+            android:name=".TrackingReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name=".SettingsActivity" />
+                <action android:name=".DISPLAY_MESSAGE" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <!--
+        BroadcastReceiver receiving intents from the GCM services and sends it to the IntentService for handling.
+        You need the permission 'com.google.android.c2dm.permission.SEND' so that GCM service can send messages to the application.
+        -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+
+                <!-- Receive messages -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receive registrationID (pre-support KitKat/Android 4.4) -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="guc.imt5401.trackmyteacher" />
+            </intent-filter>
+        </receiver>
+        <!--
+        Enables various aspects of handling messages such as detecting different downstream message types,
+        determining upstream send status, and automatically displaying simple notifications on the app’s behalf.
+        Source: https://developers.google.com/cloud-messaging/android/client
+        -->
+        <service
+            android:name=".GCMIntentService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!--
+                Handles the creation, rotation, and updating of registration tokens.
+                Source: https://developers.google.com/cloud-messaging/android/client
+                -->
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <!-- listener service for gcm -->
+        <service
+            android:name=".gcmListenerService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

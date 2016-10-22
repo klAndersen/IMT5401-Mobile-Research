@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- LocateTeacherActivity: TextView -->
+
+    <!-- TextView: Search for teacher (EditText) -->
+    <string name="tvSearchForTeacher">Enter teachers name:</string>
+    <!-- EditText: Searchable hint text for contacts -->
+    <string name="search_hint_teacher">Teachers name&#8230;</string>
+    <!-- CheckedTextView: Select all -->
+    <string name="chktvChooseAll">Select all</string>
+
+    <!-- SettingsActivity: TextView -->
+
+    <!-- TextView: Seperation text displayed between spinners -->
+    <string name="tvMiddleText">and</string>
+    <!-- TextView: Start on boot text -->
+    <string name="tvStartAtBoot">Start service after boot completed?</string>
+    <!-- TextView: Display text for option - Allow service to run in background -->
+    <string name="tvRunBackgroundService">Allow service to run in background?</string>
+    <!-- TextView: Display text for how often tracking should be enabled-->
+    <string name="tvRuntimeText">Tracking options:</string>
+    <!-- TextView: Accept all tracking requests automatically -->
+    <string name="tvAcceptAll">Send current position automatically?</string>
+
+    <!-- RegisterAccessPointsActivity: TextView for Wi-Fi Data-->
+
+    <!-- TextView: WiFi overview title -->
+    <string name="tvWiFiOverview">WiFi Data:</string>
+    <!-- TextView: WiFi name -->
+    <string name="tvWiFiName">WiFi Name:</string>
+    <!-- TextView: WiFi signal -->
+    <string name="tvWiFiSignal">WiFi Signal Strength:</string>
+    <!-- TextView: WiFi address -->
+    <string name="tvWiFiAddress">WiFi Address:</string>
+    <!-- TextView: WiFi ssid -->
+    <string name="tvWiFiSSID">WiFi SSID:</string>
+    <!-- TextView: WiFi bsid -->
+    <string name="tvWiFiBSID">WiFi BSID:</string>
+
+    <!-- RegisterAccessPointsActivity: TextView for Building, floor and room selection-->
+
+    <!-- TextView: Room Selection title -->
+    <string name="tvRoomSelection">Room Selection:</string>
+    <!-- TextView: Select building for recording Wi-Fi signal -->
+    <string name="tvSelectBuilding">Select Building:</string>
+    <!-- TextView: Select floor for recording Wi-Fi signal -->
+    <string name="tvSelectFloor">Select Floor:</string>
+    <!-- TextView: Select room for recording Wi-Fi signal -->
+    <string name="tvSelectRoom">Select Room</string>
+
+</resources>

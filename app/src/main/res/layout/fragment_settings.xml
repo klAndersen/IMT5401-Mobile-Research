@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ScrollView to be able to scroll down if settings should have content
+that extends the devices screensize -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <!-- Layout for setting: Start at boot -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tvStartAtBoot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/tvStartAtBoot" />
+
+            <CheckBox
+                android:id="@+id/chkStartAtBoot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:onClick="startAtBootUp" />
+        </RelativeLayout>
+
+        <!-- Layout for setting: Allowing service to run in background -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tvRunBackgroundService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/tvRunBackgroundService" />
+
+            <CheckBox
+                android:id="@+id/chkRunBackgroundService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:onClick="allowServiceToRunInBackground" />
+        </RelativeLayout>
+
+        <!-- Layout for setting: Sending position automatically (if tracking is enabled) -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tvAcceptAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/tvAcceptAll" />
+
+            <CheckBox
+                android:id="@+id/chkAcceptAllRequests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:onClick="setAcceptAllTrackingRequests" />
+        </RelativeLayout>
+
+        <!-- Space -->
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="15.0dip" />
+
+        <TextView
+            android:id="@+id/tvRuntimeText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tvRuntimeText" />
+
+        <!-- Layout: RadioButtons for when tracking should be enabled -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="14.5dip"
+            android:paddingStart="14.5dip" >
+
+            <RadioButton
+                android:id="@+id/rbRunNever"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="true"
+                android:onClick="selectRunNever"
+                android:text="@string/rbRunNever" />
+
+            <RadioButton
+                android:id="@+id/rbRunTimedInterval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/rbRunNever"
+                android:checked="false"
+                android:onClick="selectRunTimeInterval"
+                android:text="@string/rbRunTimedInterval" />
+
+            <Spinner
+                android:id="@+id/spinnerStartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/rbRunTimedInterval"
+                android:layout_toRightOf="@id/rbRunTimedInterval"
+                android:layout_toEndOf="@id/rbRunTimedInterval"
+                android:entries="@array/clock_hours_array"
+                android:prompt="@string/default_spinner" />
+
+            <TextView
+                android:id="@+id/tvMiddleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/rbRunTimedInterval"
+                android:layout_toRightOf="@id/spinnerStartTime"
+                android:layout_toEndOf="@id/spinnerStartTime"
+                android:text="@string/tvMiddleText"
+                android:textSize="16.0sp" />
+
+            <Spinner
+                android:id="@+id/spinnerEndTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/rbRunTimedInterval"
+                android:layout_toEndOf="@id/tvMiddleText"
+                android:layout_toRightOf="@id/tvMiddleText"
+                android:entries="@array/clock_hours_array"
+                android:prompt="@string/default_spinner" />
+
+            <RadioButton
+                android:id="@+id/rbRunAlways"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:checked="false"
+                android:onClick="selectRunAlways"
+                android:layout_below="@id/rbRunTimedInterval"
+                android:text="@string/rbRunAlways" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

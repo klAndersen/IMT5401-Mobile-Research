@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Strings used by GCM, GCM services and GCM functionality -->
+
+    <!-- GCM: retrieved and sent token from server - tracking req can be received  -->
+    <string name="gcm_send_message">Token retrieved and sent to server! You can now receive tracking requests.</string>
+    <!-- GCM: generate InstanceID token  -->
+    <string name="gcm_registering_message">Generating InstanceID token&#8230;</string>
+    <!-- GCM: error when retrieving InstanceID token or sending token-->
+    <string name="gcm_token_error_message">An error occurred while either fetching the InstanceID token or
+        sending the fetched token to the server. Please try again.</string>
+    <!-- GCM: Device already registered on gcm server -->
+    <string name="gcm_already_registered">Device already registered on GCM server.</string>
+    <!-- GCM: device registered on gcm server -->
+    <string name="gcm_registered">Device registered on GCM server.</string>
+    <!-- GCM: device unregistered from gcm server -->
+    <string name="gcm_unregistered">Device unregistered from GCM server!</string>
+    <!-- GCM: message from gcm-->
+    <string name="gcm_message">Message from GCM:\n</string>
+    <!-- GCM: error message from gcm -->
+    <string name="gcm_error">Error message from GCM: (%1$s).</string>
+    <!-- GCM: recoverable error from gcm -->
+    <string name="gcm_recoverable_error">Error message from GCM: Recoverable error (%1$s).</string>
+    <!-- GCM: gcm server deleted messages -->
+    <string name="gcm_deleted">GCM server deleted %1$d messages!</string>
+    <!-- GCM: attempt counter for server registration -->
+    <string name="gcm_server_registering">Attempting (attempt no. %1$d/%2$d) to register device on server.</string>
+    <!-- GCM: device added to our server -->
+    <string name="gcm_server_registered">Device added to server!</string>
+    <!-- GCM: device unregistered from our server -->
+    <string name="gcm_server_unregistered">Device unregistered from server!</string>
+    <!-- GCM: failed server registration counter -->
+    <string name="gcm_server_register_error">Could not register device on server after %1$d attempts.</string>
+    <!-- GCM: failed at unregistrating from our server -->
+    <string name="gcm_server_unregister_error">Could not unregister device from server(%1$s).</string>
+    <!-- GCM: senderID -->
+    <string name="sender_id"></string>
+    <!-- GCM: default senderID -->
+    <string name="gcm_defaultSenderId"></string>
+    <!-- GCM: DISPLAY_MESSAGE -->
+    <string name="display_message">guc.imt5401.trackmyteacher.DISPLAY_MESSAGE</string>
+    <!-- GCM: message -->
+    <string name="readable_message">message</string>
+
+</resources>

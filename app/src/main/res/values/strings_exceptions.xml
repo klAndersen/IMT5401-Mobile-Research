@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Exception: Unknown error occured -->
+    <string name="unknown_error_exception">An unknown error occurred. The error was:\n</string>
+    <!-- Exception: Couldn't retrieve messages (BroadcastReceiver) -->
+    <string name="exception_bcr_messages">An error occurred while retrieving messages:\n</string>
+    <!-- Exception: Error occured while attempting to read from file -->
+    <string name="read_from_file_exception">Error occurred while attempting to read from file. The error was:\n</string>
+    <!-- Exception: Error occured while attempting to write to file -->
+    <string name="write_to_file_exception">Error occurred while attempting to write to file. The error was:\n</string>
+
+    <!-- RuntimeException: Couldn't create the activity -->
+    <string name="runtime_error_exception">A problem occurred under creation of activity.\n</string>
+
+    <!-- NullPointerException: -->
+    <string name="nullpointer_error_exception">NullPointerException:\n</string>
+
+    <!-- IOException: -->
+    <string name="ioexception">IOException:\n</string>
+
+    <!-- IllegalArgumentException: -->
+    <string name="illegal_argument_exception">IllegalArgumentException:\n</string>
+
+    <!-- ParseException: Couldn't format value to date -->
+    <string name="parse_date_exception">Couldn\'t convert value to date:\n</string>
+
+    <!-- Error during attempt to connect/download from internet -->
+    <string name="no_internet_connection_found">No active internet connection found. \nCan\'t download data, are you connected to internet?</string>
+
+</resources>

@@ -1,0 +1,28 @@
+<resources>
+    <!-- Name of the application -->
+    <string name="app_name">TrackMyTeacher</string>
+
+    <!-- Activity for displaying the application log -->
+    <string name="activity_display_log">Application log</string>
+
+    <!-- Activity for displaying the settings -->
+    <string name="activity_settings">Settings</string>
+
+    <!-- Activity for storing Wi-Fi access points -->
+    <string name="activity_register_access_points">Register Wi-Fi signal</string>
+
+    <!-- Activity for locating teacher(s) -->
+    <string name="activity_locate_teacher">Locate teacher</string>
+
+    <!-- The filename containing the application log (local) -->
+    <string name="filename">trackMyTeacherLog</string>
+
+    <!-- Default value in spinner -->
+    <string name="default_spinner">Default</string>
+
+    <!-- Action bar menu option: Settings -->
+    <string name="action_settings">Settings</string>
+
+    <!-- Intent for sending tracking request to selected teacher(s) -->
+    <string name="intent_locate_teachers"> guc.imt5401.trackmyteacher.SEND_TRACKING_REQUEST</string>
+</resources>
