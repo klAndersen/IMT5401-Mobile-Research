@@ -24,3 +24,6 @@
 ### Who do I talk to? ###
 
 * @klAndersen
+
+
+Note: Originally uploaded to BitBucket; https://bitbucket.org/klAndersen/imt5401-mobile-research
